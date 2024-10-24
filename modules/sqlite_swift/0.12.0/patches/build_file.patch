@@ -1,0 +1,45 @@
+--- /dev/null	2024-10-24 23:23:07
++++ BUILD.bazel	2024-10-24 23:21:35
+@@ -0,0 +1,42 @@
++load('@build_bazel_rules_ios//rules:framework.bzl', 'apple_framework')
++# Add a config setting release for compilation mode
++# Assume that people are using `opt` for release mode
++# see the bazel user manual for more information
++# https://docs.bazel.build/versions/master/be/general.html#config_setting
++config_setting(
++  name = "release",
++  values = {
++    "compilation_mode": "opt"
++  }
++)
++apple_framework(
++  name = "SQLite",
++  module_name = "SQLite",
++  bundle_id = "org.cocoapods.SQLite.swift",
++  link_dynamic = False,
++  testonly = False,
++  platforms = {
++    "ios": "13.0"
++  },
++  srcs = glob(
++    [
++      "Sources/SQLite/**/*.swift",
++      "Sources/SQLiteObjc/**/*.h",
++      "Sources/SQLiteObjc/**/*.m",
++    ]
++  ),
++  private_headers = glob(
++    [
++      "Sources/SQLiteObjc/*.h"
++    ]
++  ),
++  sdk_dylibs = [
++    "sqlite3"
++  ],
++  xcconfig = {
++    "SWIFT_VERSION": "5"
++  },
++  visibility = [
++    "//visibility:public"
++  ]
++)

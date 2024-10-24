@@ -1,0 +1,10 @@
+{
+    "url": "https://github.com/stephencelis/SQLite.swift/archive/refs/tags/0.12.0.tar.gz",
+    "integrity": "sha256-2PSwveBbWFvIVbcQsQr/iVMdqcOCoi+FgTfvgBwwJyE=",
+    "strip_prefix": "SQLite.swift-0.12.0",
+    "patches": {
+        "build_file.patch": "sha256-v2TtHTtzyNpDg4OqRESqOtVbODvL/wbOStueKM+JLmY=",
+        "module_file.patch": "sha256-5ybO/8OvuzV2qpfihvkT5ly4uzq8sP5w/Dqo1O3jDSY="
+    },
+    "patch_strip": 0
+}

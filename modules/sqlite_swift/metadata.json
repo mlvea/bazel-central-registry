@@ -1,0 +1,11 @@
+{
+    "homepage": "https://github.com/stephencelis/SQLite.swift",
+    "maintainers": [],
+    "repository": [
+        "github:stephencelis/SQLite.swift"
+    ],
+    "versions": [
+        "0.12.0"
+    ],
+    "yanked_versions": {}
+}
